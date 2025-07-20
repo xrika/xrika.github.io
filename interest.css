@@ -1,0 +1,165 @@
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-title: 'Rampart One', sans-serif;
+  --font-cursive: 'Edu NSW ACT Cursive', cursive;
+  --button-bg: #fff;
+  --button-border: #000;
+  --violet: #C1BDF0;
+  --sky: #A3CEF0;
+  --sand: #EDE4D3;
+  --teal: #337B59;
+  --purple: #70416F;
+  --white: #FFFFFF;
+  --blue: #124475;
+  --pink: #ff4081;
+  --grey: #222;
+  --black: #000;
+  --font-size: 1.5rem;
+  --text-color: #222;
+  --hover-color: #ff4080;
+  --link-color: #000;
+  --link-hover-color: #000;
+  --button-text-color: #000;
+  --button-stroke-color: #000;
+  --list-text-color: #fff;
+  --list-box-color: #ff4080d5;
+}
+
+  .description-content {
+        max-width: 25rem;
+        line-height: 1.5;
+        font-family: 'Montserrat';
+        font-size: 13px;
+        color: var(--text-color);
+        justify-self: center;
+      }
+
+      h4, h5 {
+        text-align: center;
+        font-family: 'Edu NSW ACT Cursive';
+        font-size: 45px;
+        color: var(--text-color);
+        margin: 0rem;
+        }     
+
+/*Interest section*/
+
+#interests {
+  padding: 1rem;
+  text-align: center;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+.interest-parent {
+  position: relative;
+  width: 1100px;
+  height: 1200px;
+  margin: 0 auto;
+}
+
+.self-photo {
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Nodes behind main photo */
+.node {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Scatter positions */
+.div2 { top: 100px; left: 600px; background-color: pink;}
+.div3 { top: 150px; left: 150px; background-color: green;}
+.div4 { top: 330px; left: 870px; background-color: blue;}
+.div5 { top: 500px; left: 100px; background-color: purple;}
+.div6 { top: 650px; left: 700px; background-color: yellow;}
+.div7 { top: 330px; left: -200px; background-color: orange; }
+
+
+/*old Interest section*/
+
+/* old code #interests {
+  padding: 1rem;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.interest-parent {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: (5, 1fr); 
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+  display: grid;
+  width: 1100px;
+  height: 1200px;
+  justify-content: left;
+  align-items: left;
+}
+  
+.self-photo, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9 {
+  border-radius: 30px;
+}
+  .self-photo { 
+  grid-area: 3 / 3 / 4 / 4; 
+  background-color: black;
+}
+  .div2 { 
+  grid-area: 2 / 4 / 3 / 5;
+  background: grey;
+}
+
+  .div3 {
+  grid-area: 3 / 5 / 4 / 6;
+  background: grey;
+  }
+
+  .div4 {
+  grid-area: 4 / 4 / 5 / 5;
+  background: grey;
+  }
+
+  .div5 {
+  grid-area: 5 / 5 / 6 / 6;
+  background: grey;
+  
+  }
+
+  .div6 {
+  grid-area: 4 / 2 / 5 / 3;
+  background-color: grey;
+}
+.div7 {
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: grey;
+}
+.div8 {
+  grid-area: 3 / 1 / 4 / 2;
+  background-color: grey;
+}
+
+.div9 {
+  grid-area: 1 / 2 / 1 / 1;
+  background-color: var(--pink)
+}
+
+*/
