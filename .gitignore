@@ -1,7 +1,3 @@
 *.mov
 .DS_Store
-.artwork.css
-.artwork.html
-.knowledge.css
-.knowledge.html
-.Archieve-ignore
+Archieve-ignore/
