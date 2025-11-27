@@ -40,10 +40,10 @@
     <a href="#knowledge" class="letter">K</a>
     <a href="#artwork" class="letter">A</a></div>
 
-<h3>A student of life and self-taught aspiring front-end developer</h3>
+<h3>A student of life and self-taught aspiring digital product designer/ developer</h3>
 
   <p class="description">
-    Based in Sydney, I'm currently working as a senior Ecommerce Liaison Officer where I connect dots between teams, systems, and stories.</p>
+    Based in Sydney, Australia, I'm currently working in eCommerce where I connect dots between teams, systems, and stories.</p>
     <p class="description">I'm completing the 
     <a href="https://frontendmasters.com/" target="_blank">Frontendmasters</a> bootcamp and courses in my spare time.
   </p>
@@ -91,13 +91,14 @@
         <div class="project_content">
         <div class="project_text-wrapper">
           <h4 class="project-title">The Guildford Cat Council</h4>
-          <div class="project-subtext">A fun personal project for a make-believe cat conference, Pawlitics 2025. Inspired by the loud stray cats around my house.
+          <div class="project-subtext">A fun personal project for a make-believe cat conference, Pawlitics 2025. Inspired by the loud stray cats around my house during mating season.
 
             <ul class="project-subtext-list">
             <li>CSS</li>
             <li>HTML</li>
             <li>Javascript</li>
             <li>Github</li>
+            <li>Personal project</li>
           </ul>
     </div>
     </div>
@@ -109,6 +110,62 @@
 </div>
 </div>
 </div>
+
+    <div class="project-container">
+        <p class="number">03</p>
+
+        <div class="project_content">
+        <div class="project_text-wrapper">
+          <h4 class="project-title">Feel Alive</h4>
+          <div class="project-subtext">An immersive web experience designed to suggest a randomised activity that would make users feel more alive; a digital nudge to step away from the screen and experience the real world.
+
+            <ul class="project-subtext-list">
+            <li>CSS</li>
+            <li>HTML</li>
+            <li>GSAP.js</li>
+            <li>Github</li>
+            <li>Git</li>
+            <li>Personal project</li>
+            <li>Status: WiP</li>
+          </ul>
+    </div>
+    </div>
+
+<div class="image-box">
+      <video autoplay loop controls><source src="./img/feel-alive.mov">Your browser does not support the video tag.</video>
+      <img src="./img/feel-alive-mockup1.png" alt="Feel Alive mockup on a floating laptop with a dark background"/>
+</div>
+</div>
+</div>
+
+    <div class="project-container">
+        <p class="number">04</p>
+
+        <div class="project_content">
+        <div class="project_text-wrapper">
+          <h4 class="project-title">MunchMatch</h4>
+          <div class="project-subtext">A collaborative personal project for recipe cards with a swiping interface and randomise feature to help homecookers decide on what to eat without the decision-paralysis.
+
+            <ul class="project-subtext-list">
+            <li>CSS</li>
+            <li>HTML</li>
+            <li>GSAP.js</li>
+            <li>Github</li>
+            <li>Git</li>
+            <li>Personal project</li>
+             <li>Collaborative</li>
+            <li>Status: WiP</li>
+          </ul>
+    </div>
+    </div>
+
+<div class="image-box">
+      <img src="./img/munchmatch-wip-mockup.png" alt="MunchMatch - Work in Progress on a laptop mockup with a plain white background"/>
+</div>
+</div>
+</div>
+
+
   </section>
 
 <section id="knowledge">    
@@ -121,13 +178,11 @@
     <h4 class="skill-title">HTML5<br>
         CSS3<br>
         SASS<br>
-        Basic JavaScript<br>
         npm<br>
         Git<br>
         Github</h4>
 
-    <h4 class="skill-title">Responsive Design<br>
-        Figma<br>
+    <h4 class="skill-title">Figma<br>
         WCAG2.1<br>
         Adobe Photoshop<br>
         Adobe InDesign<br>
@@ -137,11 +192,18 @@
         Basic C++</h4>
     </div>
 
-        <p class="skills-category">Growing</p> 
+        <p class="skills-category">Learning Wishlist</p> 
     <div class="skills-wrapper">
-    <h4 class="skill-title">Node.JS<br>
-        Three.JS<br>
-        React<br>
+    <h4 class="skill-title">TouchDesigner<br>
+        Blender<br>
+    </div>
+
+         <p class="skills-category">Continuously learning</p> 
+    <div class="skills-wrapper">
+    <h4 class="skill-title">Responsive Design<br>
+        Vanilla JavaScript<br>
+        Three.js<br>
+        GSAP.js<br>
     </div>
 </div>
 </section>
@@ -175,38 +237,44 @@
 
   <nav1>
     <ul>
-      <li><a href="#resume"><span class="fa-solid fa-file" aria-hidden=true></span>
+      <li>
+        <a href="#resume">
+        <span class="fa-solid fa-file" aria-hidden=true></span>
         <span class="sr-only">Resume</span>
-      </a></li>
-    <li><a href="https://www.linkedin.com/in/" target="_blank">
+      </a>
+    </li>
+
+    <!-- linkedin below is broken somehow, need to fix it -->
+    <li>
+      <a href="https://www.linkedin.com/in/rika-vaniasari/" target="_blank">
       <span class="fa-brands fa-linkedin" aria-hidden=true></span>
       <span class="sr-only">LinkedIn</span>
-    </a></li>
+    </a>
+  </li>
+
+    <li>
       <a href="https://github.com/xrika" target="_blank">
         <span class="fa-brands fa-github" aria-hidden="true"></span>
         <span class="sr-only">GitHub</span>
       </a>
     </li>
     </ul>
+
     </nav1>
+    
     <p class="footer-description"><small>&copy; 2025 Rika Vaniasari. All rights reserved.</small></p>
-    </div>
 
+   <script src="./js/gsap.min.js"></script> 
   <script>
-    const letters = document.querySelectorAll('.letter');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+    window.addEventListener('load', () => {
+      gsap.to(".letter", {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "back.out(1.7)"
       });
-    }, {
-      threshold: 0.5
     });
-
-    letters.forEach(letter => observer.observe(letter));
 
 const themeToggle = document.getElementById('toggle-theme');
 const body = document.body;
