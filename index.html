@@ -40,7 +40,7 @@
     <a href="#knowledge" class="letter">K</a>
     <a href="#artwork" class="letter">A</a></div>
 
-<h3>A student of life and self-taught aspiring digital product designer/ developer</h3>
+<h3>A student of life and a self-taught aspiring digital product designer & developer</h3>
 
   <p class="description">
     Based in Sydney, Australia, I'm currently working in eCommerce where I connect dots between teams, systems, and stories.</p>
@@ -98,7 +98,6 @@
             <li>HTML</li>
             <li>Javascript</li>
             <li>Github</li>
-            <li>Personal project</li>
           </ul>
     </div>
     </div>
@@ -116,6 +115,34 @@
 
         <div class="project_content">
         <div class="project_text-wrapper">
+          <h4 class="project-title">GenArt projects</h4>
+          <div class="project-subtext">My first learning exploration in GenArt using different Javascript libraries (Three.js, Sketch.js, Penplotter.js, Shader.js and webgl.js) through a course done on Frontendmasters.
+            <ul class="project-subtext-list">
+            <li>Javascript</li>
+            <li>GenArt</li>
+            <li>Git</li>
+            <li>Study</li>
+          </ul>
+    </div>
+    </div>
+
+<div class="image-box">
+      <img src="./img/GenArt/2025.07.11-13.39.10.png" alt="White, blue, and green scattered dots created using GenArt"/>
+      <img src="./img/GenArt/2025.07.11-13.45.34.png" alt="Scattered continuation of the letter H in beige and brown colour using GenArt"/>
+      <img src="./img/GenArt/2025.07.11-13.51.18.png" alt="A wave of scattered symbol ;=; using GenArt"/>
+      <img src="./img/GenArt/2025.07.11-13.55.10.png" alt="A wave of random numbers created using GenArt"/>
+      <img src="./img/GenArt/2025.07.29-21.28.03-0-118356.png" alt="A similar looking to waterdrop using PenPlotter.js library for GenArt"/>
+      <img src="./img/GenArt/image.gif" alt="a moving video of GenArt with 3D rectangular shapes"/>
+
+</div>
+</div>
+</div>
+
+    <div class="project-container">
+        <p class="number">04</p>
+
+        <div class="project_content">
+        <div class="project_text-wrapper">
           <h4 class="project-title">Feel Alive</h4>
           <div class="project-subtext">An immersive web experience designed to suggest a randomised activity that would make users feel more alive; a digital nudge to step away from the screen and experience the real world.
 
@@ -125,8 +152,7 @@
             <li>GSAP.js</li>
             <li>Github</li>
             <li>Git</li>
-            <li>Personal project</li>
-            <li>Status: WiP</li>
+            <li>In Progress</li>
           </ul>
     </div>
     </div>
@@ -139,28 +165,26 @@
 </div>
 
     <div class="project-container">
-        <p class="number">04</p>
+        <p class="number">05</p>
 
         <div class="project_content">
         <div class="project_text-wrapper">
-          <h4 class="project-title">MunchMatch</h4>
+          <h4 class="project-title">Munch Match</h4>
           <div class="project-subtext">A collaborative personal project for recipe cards with a swiping interface and randomise feature to help homecookers decide on what to eat without the decision-paralysis.
 
             <ul class="project-subtext-list">
             <li>CSS</li>
             <li>HTML</li>
             <li>GSAP.js</li>
-            <li>Github</li>
-            <li>Git</li>
-            <li>Personal project</li>
+            <li>Github/Git</li>
              <li>Collaborative</li>
-            <li>Status: WiP</li>
+            <li>In Progress</li>
           </ul>
     </div>
     </div>
 
 <div class="image-box">
-      <img src="./img/munchmatch-wip-mockup.png" alt="MunchMatch - Work in Progress on a laptop mockup with a plain white background"/>
+      <img src="./img/Screenshot 2025-11-27 at 9.36.13 pm.png" alt="MunchMatch - Work in Progress on a laptop mockup with a plain white background"/>
 </div>
 </div>
 </div>
@@ -195,7 +219,7 @@
         <p class="skills-category">Learning Wishlist</p> 
     <div class="skills-wrapper">
     <h4 class="skill-title">TouchDesigner<br>
-        Blender<br>
+        Blender<br></h4>
     </div>
 
          <p class="skills-category">Continuously learning</p> 
@@ -203,7 +227,7 @@
     <h4 class="skill-title">Responsive Design<br>
         Vanilla JavaScript<br>
         Three.js<br>
-        GSAP.js<br>
+        GSAP.js<br></h4>
     </div>
 </div>
 </section>
@@ -238,13 +262,12 @@
   <nav1>
     <ul>
       <li>
-        <a href="#resume">
+        <a href="https://drive.google.com/file/d/1Z7C5mJNW3ClsZbLijVBH4Hw-wt9oc7Ka/view?usp=sharing target="_blank">
         <span class="fa-solid fa-file" aria-hidden=true></span>
         <span class="sr-only">Resume</span>
       </a>
     </li>
 
-    <!-- linkedin below is broken somehow, need to fix it -->
     <li>
       <a href="https://www.linkedin.com/in/rika-vaniasari/" target="_blank">
       <span class="fa-brands fa-linkedin" aria-hidden=true></span>
@@ -258,6 +281,13 @@
         <span class="sr-only">GitHub</span>
       </a>
     </li>
+
+    <li>
+      <a href="https://codepen.io/DuskchatterX/" target="_blank">
+        <span class="fa-brands fa-codepen" aria-hidden="true"></span>
+        <span class="sr-only">Codepen</span>
+      </a>
+    </li>
     </ul>
 
     </nav1>
@@ -266,6 +296,7 @@
 
    <script src="./js/gsap.min.js"></script> 
   <script>
+    // for my GSAP animation
     window.addEventListener('load', () => {
       gsap.to(".letter", {
         y: 0,
@@ -276,16 +307,17 @@
       });
     });
 
+    // for my light switch toggle
 const themeToggle = document.getElementById('toggle-theme');
 const body = document.body;
 
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark');
   themeToggle.querySelector('i').classList.remove('fa-toggle-on');
-  themeToggle.querySelector('i').classList.add('fa-toggle-off');  // Change icon to off
+  themeToggle.querySelector('i').classList.add('fa-toggle-off');  // off
 } else {
   themeToggle.querySelector('i').classList.remove('fa-toggle-off');
-  themeToggle.querySelector('i').classList.add('fa-toggle-on');  // Change icon to on
+  themeToggle.querySelector('i').classList.add('fa-toggle-on');  // on
 }
 
 themeToggle.addEventListener('click', () => {
@@ -293,10 +325,10 @@ themeToggle.addEventListener('click', () => {
   const isDark = body.classList.contains('dark');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
   
-  // Toggle the icons
+  // Toggle icons
   if (isDark) {
     themeToggle.querySelector('i').classList.remove('fa-toggle-on');
-    themeToggle.querySelector('i').classList.add('fa-toggle-off');  // icon for dark mode
+    themeToggle.querySelector('i').classList.add('fa-toggle-off');  // dark 
   } else {
     themeToggle.querySelector('i').classList.remove('fa-toggle-off');
     themeToggle.querySelector('i').classList.add('fa-toggle-on');  // icon for light mode
