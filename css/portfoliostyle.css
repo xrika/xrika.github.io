@@ -113,7 +113,7 @@ body.dark #toggle-theme {
   display: block;
   font-family: "Montserrat";
   font-size: 13px;
-  max-width: 50%;
+  max-width: 70%;
 }
 
 .description a {
@@ -251,6 +251,7 @@ h5 {
   grid-template-columns: 1fr 4fr;
   column-gap: 2rem;
   margin-top: 5%;
+  margin-bottom: 5%;
   align-items: start;
 }
 
@@ -300,10 +301,10 @@ h5 {
 }
 
 .project-subtext-list {
-  margin: 30px 30px 0 0;
   padding: 0;
   list-style-type: none;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   font-family: "Montserrat";
@@ -407,7 +408,8 @@ h5 {
 
 /*Interest section*/
 
-#interests {
+/* grid testing */
+/* #interests {
   padding: 1rem;
   text-align: center;
   height: 100vh;
@@ -489,6 +491,85 @@ h5 {
 .div9 {
   grid-area: 1 / 2 / 1 / 1;
   background-color: var(--pink);
+} */
+
+#interests {
+  padding: 1rem;
+  text-align: center;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+.interest-parent {
+  position: relative;
+  width: 2100px;
+  height: 1200px;
+  margin: 0 auto;
+}
+
+.self-photo {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  z-index: 2;
+}
+
+/* Nodes behind main selfie */
+.node {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  border: solid 4px var(--button-bg);
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.2);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  overflow: hidden;
+}
+
+.node img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Scatter positions for each div  */
+.div2 {
+  top: 130px;
+  left: 510px;
+}
+.div3 {
+  top: 150px;
+  left: 150px;
+}
+.div4 {
+  top: 330px;
+  left: 850px;
+}
+.div5 {
+  top: 470px;
+  left: 100px;
+}
+.div6 {
+  top: 650px;
+  left: 700px;
+}
+.div7 {
+  top: 790px;
+  left: 180px;
 }
 
 /*Resume section */
@@ -528,8 +609,7 @@ nav1 {
 }
 
 nav1 ul {
-  list-style-type: none; /* this turns off the bullet list */
-  padding: 0;
+  list-style-type: none;
   margin: 0;
   display: flex;
   flex-flow: row wrap;
@@ -557,7 +637,7 @@ nav1 [class*="fa-"]:hover {
 .number {
   font-family: "Montserrat";
   transform: rotate(270deg);
-  font-size: 40px;
+  font-size: 80px;
   display: grid;
 }
 
