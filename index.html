@@ -206,7 +206,7 @@
         Git<br>
         Github</h4>
 
-    <h4 class="skill-title">Figma<br>
+    <h4 class="skill-title">Basic Figma<br>
         WCAG2.1<br>
         Adobe Photoshop<br>
         Adobe InDesign<br>
@@ -222,12 +222,13 @@
         Blender<br></h4>
     </div>
 
-         <p class="skills-category">Continuously learning</p> 
+         <p class="skills-category">Ongoing</p> 
     <div class="skills-wrapper">
     <h4 class="skill-title">Responsive Design<br>
         Vanilla JavaScript<br>
         Three.js<br>
-        GSAP.js<br></h4>
+        GSAP.js<br>
+      Figma</h4>
     </div>
 </div>
 </section>
@@ -237,17 +238,14 @@
     <p class="description-content">What sparks my creativity and guides my work.</p>
 
     <div class="interest-parent">
-      <div class="self-photo"> </div>
-      <div class="div2"> </div>
-      <div class="div3"> </div>
-      <div class="div4"> </div>
-      <div class="div5"> </div>
-      <div class="div6"> </div>
-      <div class="div7"> </div>
-      <div class="div8"> </div>
-      <div class="div9"> </div>
+    <div class="node div1"><img src="./img/Interest/self-photo.JPG" alt="Rika with climbing gears at a Blue Mountains crag, looking directly at the camera"></div>
+    <div class="node div2"><img src="./img/Interest/mushrooms.JPG" alt="a photo of conk mushroom growing on a log, found during mushrooms foraging"/></div>
+    <div class="node div3"><img src="./img/Interest/thai-travel-np.JPG" alt="Travel pic while in Thailand's National Park"/></div>
+    <div class="node div4"><img src="./img/Interest/bubur-ayam.JPG" alt="a photo of an Indonesian street food, Bubur Ayam"/></div>
+    <div class="node div5"><img src="./img/Interest/chartippy.png" alt="man holding a tiny kitten with the kitten showing its teeth to the photographer"/></div>
+    <div class="node div6"><img src="./img/Interest/diving-nsw.jpg" alt="Rika scuba diving near Bare Island, NSW"/></div>
+    <div class="node div7"><img src="./img/Interest/bird-watching.jpg" alt="a bird spotted from a far in between tree branches"/></div>
       </div>
-
 </section>
 
   <section id="resume">
@@ -331,10 +329,51 @@ themeToggle.addEventListener('click', () => {
     themeToggle.querySelector('i').classList.add('fa-toggle-off');  // dark 
   } else {
     themeToggle.querySelector('i').classList.remove('fa-toggle-off');
-    themeToggle.querySelector('i').classList.add('fa-toggle-on');  // icon for light mode
+    themeToggle.querySelector('i').classList.add('fa-toggle-on');  // light 
   }
 });
 
+// start of interest section
+document.addEventListener('DOMContentLoaded', () => {
+  const section = document.querySelector('#interests');
+  const nodes = section.querySelectorAll('.node');
+
+  let isActive = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
+
+    if (entry.isIntersecting) {
+      isActive = true;
+    } else {
+      isActive = false;
+
+      nodes.forEach(node => {
+        node.style.opacity = 0;
+        node.style.transform = "scale(0.1)";
+      });
+    }
+  }, { threshold: 0.01 });
+
+  observer.observe(section);
+
+  // Scroll animation
+  window.addEventListener('scroll', () => {
+    if (!isActive) return;
+
+    const scrollY = window.scrollY;
+
+    nodes.forEach((node, i) => {
+      const delay = i * 20;
+      const triggerPoint = section.offsetTop + delay;
+      let progress = (scrollY - triggerPoint) * 0.01;
+      progress = Math.max(0, Math.min(progress, 1.5));
+
+      node.style.opacity = progress;
+      node.style.transform = `scale(${0.2 + progress * 0.5})`;
+    });
+  });
+});
   </script>
 
 </body>
