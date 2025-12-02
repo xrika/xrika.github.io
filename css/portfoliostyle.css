@@ -435,6 +435,7 @@ h5 {
   transform: scale(0.2);
   transition: transform 0.6s ease, opacity 0.6s ease;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .node img {
@@ -472,6 +473,25 @@ h5 {
 .div7 {
   top: 790px;
   left: 345px;
+}
+
+.bottom-center-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  text-shadow: 0 0 6px var(--black);
+}
+
+.node:hover .bottom-center-text {
+  opacity: 1;
 }
 
 /*Resume section */
