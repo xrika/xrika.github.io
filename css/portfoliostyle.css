@@ -139,7 +139,7 @@ h3 {
   align-items: center;
   gap: 0rem;
   padding: 0rem;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .letter-block {
@@ -246,6 +246,12 @@ h5 {
   height: 100%;
 }
 
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
 .project-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -253,6 +259,12 @@ h5 {
   margin-top: 5%;
   margin-bottom: 5%;
   align-items: start;
+}
+
+.project-link:hover {
+  color: var(--hover-color);
+  cursor: pointer;
+  transform: translateY(-1px);
 }
 
 .project_content {
