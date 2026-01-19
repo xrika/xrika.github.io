@@ -211,6 +211,10 @@ h6 {
   margin: 0rem;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 /*Artwork section*/
 
 #artwork {
