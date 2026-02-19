@@ -539,6 +539,25 @@ h6 {
   margin: 4rem 0;
 }
 
+.image-box-snapshots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+  grid-column-gap: 0px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box-snapshots img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
 .project-subheading-answer {
   list-style: none;
   gap: 10rem;
@@ -556,6 +575,7 @@ h6 {
 }
 
 .bottom-center-text {
+  /*need to fix this!!!!! */
   position: absolute;
   bottom: 10px;
   left: 45%;
