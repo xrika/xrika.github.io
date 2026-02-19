@@ -567,13 +567,13 @@ h5.highlight:hover {
 }
 
 /* navbar */
-nav1 {
+nav {
   font-family: "Montserrat";
   font-size: 100%;
   padding: 5rem;
 }
 
-nav1 ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   display: flex;
@@ -583,19 +583,19 @@ nav1 ul {
   gap: 10rem;
 }
 
-nav1 [class*="fa-"] {
+nav [class*="fa-"] {
   font-size: 180%;
   color: var(--grey);
 }
 
-nav1 a {
+nav a {
   color: #222;
   text-decoration: none;
   display: block;
 }
 
-nav1 a:hover,
-nav1 [class*="fa-"]:hover {
+nav a:hover,
+nav [class*="fa-"]:hover {
   color: #ff4081;
 }
 
