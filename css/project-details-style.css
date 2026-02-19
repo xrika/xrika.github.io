@@ -268,7 +268,7 @@ h6 {
 .project-description-quote {
   text-align: left;
   font-family: "Montserrat";
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-color);
   margin: 0rem;
 }
@@ -303,7 +303,6 @@ h6 {
 }
 
 .project-subtext {
-  color: #555;
   font-family: "Montserrat";
   font-size: 13px;
   text-align: left;
@@ -312,7 +311,6 @@ h6 {
 }
 
 .project-subtitle {
-  color: #555;
   font-family: "Montserrat";
   font-size: 15px;
   text-align: left;
@@ -534,6 +532,13 @@ h6 {
   list-style: none;
   margin: 0.5rem;
   gap: 10rem;
+}
+
+.wip-title-centered {
+  font-family: "Montserrat";
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-color);
 }
 
 /* footer */

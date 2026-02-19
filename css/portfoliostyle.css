@@ -200,7 +200,9 @@ h3 {
   stroke-width: 2;
   stroke-dasharray: 500;
   stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1s ease, stroke-dasharray 1s ease;
+  transition:
+    stroke-dashoffset 1s ease,
+    stroke-dasharray 1s ease;
 }
 
 .btn-svg-outline:hover rect {
@@ -309,7 +311,7 @@ h5 {
   font-size: 13px;
   text-align: left;
   color: var(--text-color);
-  max-width: 70%;
+  /* max-width: 70%; */
 }
 
 .project-subtext-list {
@@ -331,6 +333,15 @@ h5 {
   font-family: "Montserrat";
   font-size: 12px;
   border-radius: 0.5rem;
+}
+
+.project-headline-list {
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.project-headline-list li {
+  margin: 0.5rem;
 }
 
 .image-box {
@@ -445,7 +456,9 @@ h5 {
   z-index: 1;
   opacity: 0;
   transform: scale(0.2);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
   overflow: hidden;
   cursor: pointer;
 }
