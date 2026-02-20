@@ -25,6 +25,13 @@
   --button-stroke-color: #000;
   --list-text-color: #fff;
   --list-box-color: #ff4080d5;
+
+  --bg-color: #fefefe;
+  --surface-light: #fff;
+  --surface-dark: #333;
+  --border-subtle: #ccc;
+  --border-dark: #444;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -54,9 +61,16 @@ body {
   --button-stroke-color: #fff;
   --list-text-color: #ff4080d5;
   --list-box-color: #fff;
+
+  --bg-color: #111;
+  --surface-light: #333;
+  --surface-dark: #fff;
+  --border-subtle: #444;
+  --border-dark: #ccc;
 }
+
 body.dark {
-  background: #111;
+  background: var(--bg-color);
   color: var(--grey);
 }
 
@@ -64,30 +78,81 @@ body.dark {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #fff;
-  border: 2px solid #ccc;
+  background: var(--surface-light)
+  border: 2px solid var(--border-subtle);
   border-radius: 50%;
   padding: 15px;
   cursor: pointer;
-  font-size: 24px; /* Size of the icon */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  box-shadow: 0 4px 8px var(--shadow);
   transition: all 0.3s ease;
-  color: #333;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Style in dark mode */
+/* for toggle style in dark mode */
 body.dark #toggle-theme {
-  background: #333;
-  border-color: #444;
-  color: #fff;
+  background: var(--surface-light);
+  border-color: var(--border-subtle);
+  color: var(--list-box-color);
 }
 
 #toggle-theme:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease;
+}
+
+/* for my progress bar - positioned at the top */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: var(--pink);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* scroll to top button on top of toggle */
+#scroll-top {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--border-subtle);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
+  background: var(--surface-light);
+  color: var(--text-color);
+  font-size: 18px;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+body.dark #scroll-top {
+  background: var(--surface-light);
+  border-color:var(--border-subtle);
+  color: var(--list-box-color);
+}
+
+#scroll-top:hover {
+  transform: scale(1.1);
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .complete-wrapper {
