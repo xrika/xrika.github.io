@@ -78,7 +78,7 @@ body.dark {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--surface-light)
+  background: var(--surface-light);
   border: 2px solid var(--border-subtle);
   border-radius: 50%;
   padding: 15px;
@@ -142,7 +142,7 @@ body.dark #toggle-theme {
 
 body.dark #scroll-top {
   background: var(--surface-light);
-  border-color:var(--border-subtle);
+  border-color: var(--border-subtle);
   color: var(--list-box-color);
 }
 
