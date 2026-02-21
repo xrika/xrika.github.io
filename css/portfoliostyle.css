@@ -629,3 +629,138 @@ nav [class*="fa-"]:hover {
   font-size: 13px;
   max-width: 45%;
 }
+
+/* for mobile responsiveness - may need to further test later */
+
+@media (max-width: 768px) {
+  /* for all letters */
+  .letter {
+    font-size: 5rem;
+  }
+
+  .letter-block {
+    gap: 10px;
+  }
+
+  .description {
+    max-width: 90%;
+    font-size: 12px;
+  }
+
+  .description-content {
+    max-width: 90%;
+  }
+
+  /* project grid: collapse number but keeping the title as its linked + stacking content side by side */
+  .project-container {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* decided to hide the big rotated number on mobile — takes up too much space */
+  .number {
+    display: none;
+  }
+
+  .project-title {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .project_text-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .image-box {
+    grid-template-columns: 1fr;
+  }
+
+  .image-box2 {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skills-category {
+    display: none; /* rotated text doesn't work on mobile so i'd have to remove this. i may need to test again later on what i can do on this */
+  }
+
+  nav ul {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  /* on mobile i have to disable the scatter layout entirely and show a simple grid. too hard to do */
+  #interests {
+    height: auto;
+    overflow: visible;
+    padding: 2rem 1rem;
+  }
+
+  .interest-parent {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    position: static;
+  }
+
+  /* all nodes reseted into absolute to make it easier */
+  .node {
+    position: static !important;
+    width: 100% !important;
+    height: 200px !important;
+    opacity: 1 !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .bottom-center-text {
+    opacity: 1;
+    position: relative;
+    left: auto;
+    transform: none;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  section {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  #resume {
+    height: auto;
+  }
+}
+
+/* tablet/ipad breakpoint */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .letter {
+    font-size: 8rem;
+  }
+
+  .project-container {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .image-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .interest-parent {
+    width: 100%;
+    height: 900px;
+  }
+}
