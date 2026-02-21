@@ -25,11 +25,18 @@
   --button-stroke-color: #000;
   --list-text-color: #fff;
   --list-box-color: #ff4080d5;
+
+  --bg-color: #fefefe;
+  --surface-light: #fff;
+  --surface-dark: #333;
+  --border-subtle: #ccc;
+  --border-dark: #444;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 body {
   font-family: "Rampart One", sans-serif;
-  background: #fefefe;
+  background: var(--bg-color);
   scroll-behavior: smooth;
   text-align: center;
   gap: 5rem;
@@ -54,9 +61,16 @@ body {
   --button-stroke-color: #fff;
   --list-text-color: #ff4080d5;
   --list-box-color: #fff;
+
+  --bg-color: #111;
+  --surface-light: #333;
+  --surface-dark: #fff;
+  --border-subtle: #444;
+  --border-dark: #ccc;
 }
+
 body.dark {
-  background: #111;
+  background: var(--bg-color);
   color: var(--grey);
 }
 
