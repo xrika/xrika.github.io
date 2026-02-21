@@ -90,6 +90,7 @@ body.dark {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 /* Style in dark mode */

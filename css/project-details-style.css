@@ -90,6 +90,7 @@ body.dark {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
 
 /* for toggle style in dark mode */
@@ -138,6 +139,7 @@ body.dark #toggle-theme {
   color: var(--text-color);
   font-size: 18px;
   box-shadow: 0 4px 8px var(--shadow);
+  z-index: 9999;
 }
 
 body.dark #scroll-top {
