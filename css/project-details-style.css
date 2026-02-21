@@ -560,3 +560,60 @@ nav [class*="fa-"]:hover {
   font-size: 13px;
   max-width: 45%;
 }
+
+/* for mobile responsiveness - may need to further test later */
+
+@media (max-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+
+  .number {
+    display: none;
+  }
+
+  .project_text-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .project_text-wrapper-details {
+    grid-template-columns: 1fr;
+  }
+
+  .project-title {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  .image-box {
+    grid-template-columns: 1fr;
+  }
+
+  .image-box-snapshots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  nav ul {
+    gap: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .project_text-wrapper {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .project_text-wrapper-details {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .image-box-snapshots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
