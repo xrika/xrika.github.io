@@ -227,6 +227,21 @@ h3 {
   stroke-dashoffset: 135;
 }
 
+.btn-svg-outline span {
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-svg-outline:hover span {
+  text-decoration: none;
+}
+
+.btn-svg-outline:hover {
+  text-decoration: none;
+}
+
 section {
   height: 100vh;
   padding: 4rem;
