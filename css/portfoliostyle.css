@@ -223,7 +223,7 @@ h3 {
 }
 
 .btn-svg-outline:hover rect {
-  stroke-dasharray: 90 300;
+  stroke-dasharray: 90 280;
   stroke-dashoffset: 135;
 }
 
