@@ -149,7 +149,7 @@ h3 {
 
 .rika-container {
   display: flex;
-  flex-direction: column; /* note for Rika: this is for vertical stack */
+  flex-direction: column; /* maybe I can remove this vertical stacking later */
   justify-content: center;
   align-items: center;
   gap: 0rem;
@@ -806,6 +806,7 @@ nav [class*="fa-"]:hover {
   }
 }
 
+/* adding underline animation so its clear UX after getting some feedback */
 @media (min-width: 769px) {
   .letter::after {
     content: "";
@@ -822,5 +823,35 @@ nav [class*="fa-"]:hover {
 
   .letter:hover::after {
     width: 60%;
+  }
+}
+
+@media (pointer: coarse) {
+  .letter {
+    position: relative;
+  }
+
+  .letter::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 3px;
+    background: var(--hover-color);
+    border-radius: 2px;
+    opacity: 0.25;
+  }
+
+  h3 {
+    text-align: center;
+    font-family: "Edu NSW ACT Cursive";
+    font-size: 18px;
+    color: var(--text);
+  }
+
+  .btn-svg-outline {
+    font-size: 12px;
   }
 }
