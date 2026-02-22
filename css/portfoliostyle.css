@@ -250,7 +250,7 @@ section {
   align-items: center;
   justify-content: flex-start;
   font-size: 3rem;
-  color: #222;
+  color: var(--text-color);
   border-top: 1px #ccc;
 }
 
@@ -613,14 +613,37 @@ h5 {
 }
 
 h5.highlight a {
-  color: #222;
+  color: var(--text-color);
   text-decoration: none;
   color: inherit;
 }
 
 h5.highlight:hover {
-  color: #ff4080;
+  color: var(--hover-color);
   cursor: pointer;
+}
+
+h5.highlight {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+h5.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--hover-color);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+h5.highlight:hover::after {
+  width: 80%;
 }
 
 /* navbar */
