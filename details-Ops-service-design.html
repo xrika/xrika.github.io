@@ -78,6 +78,7 @@
                   <li>Service Design</li>
                   <li>Adopted by 3 Departments</li>
                   <li>Self-initiated</li>
+                  <li>V2 After User Testing</li>
                 </ul>
               </div>
             </div>
@@ -223,13 +224,34 @@
             </div>
 
             <div class="project_text-wrapper-details">
-              <h6>The Solution: A Low-Code Walk-In Excel Form and Process</h6>
+              <h6>First Deployment & Iteration</h6>
               <p class="project-subtext">
-                I spent approximately six weeks researching, building, and
-                refining an automated Excel-based workspace; all while teaching
-                myself the formula logic required as I went. The system was
-                built around three distinct layers, each serving a different
-                user need.<br /><br />
+                The first version of the form was a single tab combining input
+                and output. It failed almost immediately.<br /><br />
+                Within the first two weeks, staff were editing the field
+                headings instead of filling in the fields, which broke the
+                template layout entirely. I had overestimated the team's
+                familiarity with Excel, assuming a baseline of technical
+                confidence that simply wasn't there across all roles. The
+                inconsistency was unmanageable and I had to intervene daily to
+                repair the file.<br /><br />
+                This was a critical lesson: I had designed for myself (with my
+                technical skills in mind), and not for my users. So I went back
+                in.
+              </p>
+            </div>
+
+            <div class="project_text-wrapper-details">
+              <h6>
+                The Final Solution: A V2 Low-Code Walk-In Excel Form and Process
+              </h6>
+              <p class="project-subtext">
+                To reiterate the final V2 solution, I spent approximately
+                another six weeks researching, building, and refining an
+                automated Excel-based workspace; all while teaching myself the
+                formula logic required as I went. The system was built around
+                three distinct layers, each serving a different user need.<br /><br />
+
                 <strong>1. The Logic Layer</strong><br /><br />
                 A dedicated "How-To" documentation tab so that any team member
                 could step in as liaison without needing to ask me how the
@@ -253,7 +275,31 @@
                 All requests and stock movements were simultaneously recorded on
                 relevant Zendesk ticket(s) and in the physical walk-in tab,
                 creating a dual digital and physical paper trail for the first
-                time.
+                time.<br /><br />
+              </p>
+            </div>
+
+            <div class="project_text-wrapper-details">
+              <h6>Summary of V2 Solution</h6>
+              <p class="project-subtext">
+                <strong>What changed in V2:</strong><br /><br />
+                The single tab was restructured into three distinct, protected
+                layers. The <strong>How-To tab</strong> was locked and
+                read-only, with step-by-step instructions for every role. The
+                <strong>Input tab</strong> was unlocked but guarded. I
+                researched and built Excel formula validation with pop-up error
+                messages that prevented users from progressing if a field was
+                left blank or incorrectly filled. The
+                <strong>Output tab</strong> was fully locked, printable only, so
+                nothing could accidentally be edited.<br /><br />
+                I also changed the file format from <code>.xlsx</code> to
+                <code>.xltx</code> (Excel Template format), which forces the
+                system to save a new copy each time rather than overwriting the
+                master template; making it structurally impossible to corrupt
+                the base file.<br /><br />
+                This second version is what has been running untouched for over
+                a year. The first deployment wasn't a failure. It was the
+                research phase I didn't know I needed.
               </p>
             </div>
 
