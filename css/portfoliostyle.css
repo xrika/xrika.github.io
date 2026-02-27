@@ -671,14 +671,14 @@ nav [class*="fa-"] {
 
 nav a {
   font-family: "Montserrat", sans-serif;
-  color: #222;
+  color: var(--text-color)
   text-decoration: none;
   display: block;
 }
 
 nav a:hover,
 nav [class*="fa-"]:hover {
-  color: #ff4081;
+  color: var(--hover-color);
 }
 
 .number {
