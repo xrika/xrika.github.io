@@ -13,18 +13,18 @@
   --purple: #70416f;
   --white: #ffffff;
   --blue: #124475;
-  --pink: #ff4081;
+  --pink: #d63068;
   --grey: #222;
   --black: #000;
   --font-size: 1.5rem;
   --text-color: #222;
-  --hover-color: #ff4080;
+  --hover-color: #d63068;
   --link-color: #000;
   --link-hover-color: #000;
   --button-text-color: #000;
   --button-stroke-color: #000;
   --list-text-color: #fff;
-  --list-box-color: #ff4080d5;
+  --list-box-color: #d63068;
 
   --bg-color: #fefefe;
   --surface-light: #fff;
@@ -52,14 +52,15 @@ body {
   --purple: #b689b0;
   --white: #000000;
   --blue: #8fb4e9;
-  --pink: #ff9ecf;
+  --pink: #ff6b9d;
   --grey: #ddd;
   --black: #fff;
   --text-color: #fff;
+  --hover-color: #ff6b9d;
   --link-color: #fff;
   --button-text-color: #fff;
   --button-stroke-color: #fff;
-  --list-text-color: #ff4080d5;
+  --list-text-color: #d63068;
   --list-box-color: #fff;
 
   --bg-color: #111;
