@@ -671,7 +671,7 @@ nav [class*="fa-"] {
 
 nav a {
   font-family: "Montserrat", sans-serif;
-  color: var(--text-color)
+  color: var(--text-color);
   text-decoration: none;
   display: block;
 }
