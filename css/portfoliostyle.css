@@ -808,6 +808,43 @@ nav [class*="fa-"]:hover {
     display: none;
   }
 
+  #knowledge {
+    padding: 2rem 1rem;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 1rem;
+  }
+
+  .skills-wrapper {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .skills-wrapper:last-child {
+    border-bottom: none;
+  }
+
+  .skills-category {
+    display: block !important;
+    transform: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .skill-title {
+    font-size: 16px;
+  }
+
   /* Nav */
   nav {
     padding: 2rem 1rem;
