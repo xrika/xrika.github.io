@@ -561,7 +561,7 @@ h5 {
 /* scatter positions for each div  */
 .div1 {
   top: 455px;
-  left: 435px;
+  left: 450px;
 }
 .div2 {
   top: 130px;
@@ -581,11 +581,15 @@ h5 {
 }
 .div6 {
   top: 650px;
-  left: 750px;
+  left: 800px;
 }
 .div7 {
   top: 780px;
-  left: 425px;
+  left: 480px;
+}
+.div8 {
+  top: 790px;
+  left: 150px;
 }
 
 .bottom-center-text {
