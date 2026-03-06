@@ -34,6 +34,18 @@
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
+/* global sizing */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: "Rampart One", sans-serif;
   background: var(--bg-color);
@@ -719,14 +731,22 @@ nav [class*="fa-"]:hover {
     max-width: 90%;
   }
 
-  /* project grid: collapse number but keeping the title as its linked + stacking content side by side */
+  .complete-wrapper {
+    padding: 0 1rem;
+  }
+
   .project-container {
     grid-template-columns: 1fr;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    overflow: hidden;
   }
 
-  /* decided to hide the big rotated number on mobile — takes up too much space */
+  .project_content {
+    min-width: 0;
+    overflow: hidden;
+  }
+
   .number {
     display: none;
   }
@@ -738,31 +758,68 @@ nav [class*="fa-"]:hover {
 
   .project_text-wrapper {
     grid-template-columns: 1fr;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .image-box {
     grid-template-columns: 1fr;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .image-box img,
+  .image-box img:first-child {
+    width: 100%;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    display: block;
+  }
+
+  .image-box video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
   }
 
   .image-box2 {
     grid-template-columns: 1fr;
+    width: 100%;
+    overflow: hidden;
   }
 
+  .image-box2 img {
+    width: 100%;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    display: block;
+  }
+
+  /* Knowledge section  */
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
   .skills-category {
-    display: none; /* rotated text doesn't work on mobile so i'd have to remove this. i may need to test again later on what i can do on this */
+    display: none;
+  }
+
+  /* Nav */
+  nav {
+    padding: 2rem 1rem;
   }
 
   nav ul {
     gap: 2rem;
-    padding: 1rem;
+    padding: 0;
+    flex-wrap: wrap;
   }
 
-  /* on mobile i have to disable the scatter layout entirely and show a simple grid. too hard to do */
+  /* Interests: had to disable JS scatter, using 2-col grid instead */
   #interests {
     height: auto;
     overflow: visible;
@@ -778,7 +835,6 @@ nav [class*="fa-"]:hover {
     position: static;
   }
 
-  /* all nodes reseted into absolute to make it easier */
   .node {
     position: static !important;
     width: 100% !important;
@@ -799,17 +855,40 @@ nav [class*="fa-"]:hover {
     text-align: center;
   }
 
+  /* Sections: remove fixed heights */
   section {
     height: auto;
     padding: 2rem 1rem;
+    overflow: hidden;
+  }
+
+  #artwork {
+    height: auto;
+    padding: 1rem;
   }
 
   #resume {
     height: auto;
+    padding: 3rem 1rem;
+    overflow: visible;
+  }
+
+  .resume-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  h4,
+  h5 {
+    font-size: 28px;
+  }
+
+  .footer-description {
+    max-width: 90%;
   }
 }
 
-/* tablet/ipad breakpoint */
 @media (max-width: 1024px) and (min-width: 769px) {
   .letter {
     font-size: 8rem;
@@ -823,6 +902,12 @@ nav [class*="fa-"]:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .image-box img,
+  .image-box img:first-child {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
   .skills-container {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -833,7 +918,6 @@ nav [class*="fa-"]:hover {
   }
 }
 
-/* adding underline animation so its clear UX after getting some feedback */
 @media (min-width: 769px) {
   .letter::after {
     content: "";
