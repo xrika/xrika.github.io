@@ -192,10 +192,22 @@ h3 {
   color: var(--hover-color);
 }
 
-/* .letter.visible {
-      opacity: 1;
-      transform: translateY(0);
-    } */
+.letter {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.6s ease;
+}
+
+@keyframes letter-fallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.letter {
+  animation: letter-fallback 0.6s ease 2s forwards;
+}
 
 .btn-svg-outline {
   position: relative;
