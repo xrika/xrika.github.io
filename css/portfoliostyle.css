@@ -161,6 +161,7 @@ h3 {
 }
 
 .rika-container {
+  position: relative; /* anchors the scroll cue */
   display: flex;
   flex-direction: column; /* maybe I can remove this vertical stacking later */
   justify-content: center;
@@ -207,6 +208,187 @@ h3 {
 
 .letter {
   animation: letter-fallback 0.6s ease 2s forwards;
+}
+
+/* letter label tooltips: R = Resume, I = Interests, K = Knowledge, A = Artwork */
+.letter::before {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--hover-color);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.letter:hover::before,
+.letter:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* hint under the letters */
+.letter-hint {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0;
+  margin-top: 3.5rem;
+  animation: hint-fade-in 0.8s ease 3s forwards;
+}
+
+.letter-hint i {
+  margin-right: 4px;
+  color: var(--hover-color);
+}
+
+@keyframes hint-fade-in {
+  to {
+    opacity: 0.4;
+  }
+}
+
+/* rotating "I am ___" line */
+.i-am-line {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+.i-am-word-wrapper {
+  display: inline-block;
+  min-width: 0;
+}
+
+.i-am-word {
+  display: inline-block;
+  color: var(--hover-color);
+  font-weight: 700;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.i-am-word--out {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.i-am-word--in {
+  animation: word-in 0.4s ease;
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.location-line {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-top: 1.7rem;
+  text-align: center;
+}
+
+/* scroll cue at bottom of hero */
+.scroll-cue {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: var(--text-color);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-cue:hover {
+  opacity: 1;
+  color: var(--hover-color);
+}
+
+.scroll-cue-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-cue i {
+  animation: cue-bounce 1.8s ease-in-out infinite;
+  font-size: 14px;
+}
+
+@keyframes cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue i {
+    animation: none;
+  }
+  .letter {
+    animation-duration: 0.01ms;
+    animation-delay: 0s;
+  }
+  .letter-hint {
+    animation-duration: 0.01ms;
+    animation-delay: 0s;
+  }
+}
+
+/* hint copy: "hover" on mouse devices, "tap" on touch devices */
+.hint-tap {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .hint-hover {
+    display: none;
+  }
+  .hint-tap {
+    display: inline;
+  }
+
+  /* on touch there is no hover, so show the letter labels permanently */
+  .letter::before {
+    opacity: 0.75;
+    transform: translateX(-50%) translateY(0);
+    font-size: 9px;
+    letter-spacing: 1px;
+    bottom: -4px;
+  }
 }
 
 .btn-svg-outline {
@@ -537,95 +719,73 @@ h4.skill-title {
 #interests {
   padding: 1rem;
   text-align: center;
-  height: 140vh;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
 }
 
 .container {
   position: relative;
 }
 
-.interest-parent {
+/* Interests: responsive bento grid (works on all devices) */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 170px;
+  grid-auto-flow: dense;
+  gap: 1rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto 0;
+}
+
+.interest-tile {
   position: relative;
-  width: 2100px;
-  height: 1200px;
-  margin: 0 auto;
-}
-
-.node {
-  width: 300px;
-  height: 300px;
+  margin: 0;
   border-radius: 20px;
-  border: solid 4px var(--button-bg);
-  position: absolute;
-  z-index: 1;
-  opacity: 0;
-  transform: scale(0.2);
-  transition:
-    transform 0.6s ease,
-    opacity 0.6s ease;
   overflow: hidden;
-  cursor: pointer;
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
-.node img {
+.interest-tile.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tile-tall {
+  grid-row: span 2;
+}
+
+.interest-tile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
-/* scatter positions for each div  */
-.div1 {
-  top: 455px;
-  left: 450px;
-}
-.div2 {
-  top: 130px;
-  left: 510px;
-}
-.div3 {
-  top: 150px;
-  left: 150px;
-}
-.div4 {
-  top: 330px;
-  left: 825px;
-}
-.div5 {
-  top: 470px;
-  left: 100px;
-}
-.div6 {
-  top: 650px;
-  left: 800px;
-}
-.div7 {
-  top: 780px;
-  left: 480px;
-}
-.div8 {
-  top: 790px;
-  left: 150px;
+.interest-tile:hover img {
+  transform: scale(1.05);
 }
 
-.bottom-center-text {
+.interest-tile figcaption {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--white);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem 0.75rem 0.6rem;
+  color: #fff;
   font-family: var(--font-primary);
-  font-size: 1.2rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  letter-spacing: 0.5px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
   pointer-events: none;
-  text-shadow: 0 0 6px var(--black);
-}
-
-.node:hover .bottom-center-text {
-  opacity: 1;
 }
 
 /*Resume section */
@@ -877,40 +1037,17 @@ nav [class*="fa-"]:hover {
     flex-wrap: wrap;
   }
 
-  /* Interests: had to disable JS scatter, using 2-col grid instead */
+  /* Interests: bento grid collapses to 2 columns on mobile */
   #interests {
     height: auto;
     overflow: visible;
     padding: 2rem 1rem;
   }
 
-  .interest-parent {
-    width: 100%;
-    height: auto;
-    display: grid;
+  .interest-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    position: static;
-  }
-
-  .node {
-    position: static !important;
-    width: 100% !important;
-    height: 200px !important;
-    opacity: 1 !important;
-    transform: none !important;
-    top: auto !important;
-    left: auto !important;
-  }
-
-  .bottom-center-text {
-    opacity: 1;
-    position: relative;
-    left: auto;
-    transform: none;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    text-align: center;
+    grid-auto-rows: 150px;
+    gap: 0.75rem;
   }
 
   /* Sections: remove fixed heights */
@@ -970,9 +1107,8 @@ nav [class*="fa-"]:hover {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .interest-parent {
-    width: 100%;
-    height: 900px;
+  .interest-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

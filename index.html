@@ -44,21 +44,35 @@
         <p class="intro">Hi, my name is</p>
 
         <div class="letter-block">
-          <a href="#resume" class="letter">R</a>
-          <a href="#interests" class="letter">I</a>
-          <a href="#knowledge" class="letter">K</a>
-          <a href="#artwork" class="letter">A</a>
+          <a href="#resume" class="letter" data-label="Resume">R</a>
+          <a href="#interests" class="letter" data-label="Interests">I</a>
+          <a href="#knowledge" class="letter" data-label="Knowledge">K</a>
+          <a href="#artwork" class="letter" data-label="Artwork">A</a>
         </div>
 
-        <h3>Product Designer & Systems Thinker</h3>
+        <p class="letter-hint">
+          <i class="fa-solid fa-arrow-pointer" aria-hidden="true"></i>
+          <span class="hint-hover"
+            >each letter is a shortcut; hover to see where it takes you</span
+          >
+          <span class="hint-tap"
+            >each letter is a shortcut; tap one to jump there</span
+          >
+        </p>
+
+        <!-- <h3>Product Designer & Systems Thinker</h3>
         <h1 class="sr-only">
           Rika Vaniasari — Product Designer & Systems Thinker
-        </h1>
+        </h1> -->
 
-        <p class="description">
-          I have a low tolerance for broken systems and a high drive to build
-          digital experiences that feel<br />as intuitive, human, and resilient
-          as a natural ecosystem.<br /><br />
+        <p class="i-am-line">
+          I am
+          <span class="i-am-word-wrapper">
+            <span id="i-am-word" class="i-am-word">a product designer</span>
+          </span>
+        </p>
+
+        <p class="location-line">
           Based in Sydney. Open to UX, product, and service design roles.
         </p>
 
@@ -67,6 +81,15 @@
             <rect x="0" y="0" width="180" height="50" />
           </svg>
           <span>Check out my work</span>
+        </a>
+
+        <a
+          href="#artwork"
+          class="scroll-cue"
+          aria-label="Scroll down to case studies"
+        >
+          <span class="scroll-cue-text">scroll</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
         </a>
       </div>
 
@@ -473,63 +496,71 @@
           What sparks my creativity and guides my work.
         </p>
 
-        <div class="interest-parent">
-          <div class="node div1">
+        <div class="interest-grid">
+          <figure class="interest-tile tile-tall">
             <img
               src="./img/Interest/self-photo.JPG"
               alt="Rika at a Blue Mountains climbing crag"
+              loading="lazy"
             />
-            <div class="bottom-center-text">Rika</div>
-          </div>
-          <div class="node div2">
+            <figcaption>Climbing</figcaption>
+          </figure>
+          <figure class="interest-tile">
             <img
               src="./img/Interest/rika-mushrooms-foraging.JPG"
               alt="basket of foraged Saffron Milk Cap mushrooms"
+              loading="lazy"
             />
-            <div class="bottom-center-text">
-              Mushrooms Foraging and Spotting
-            </div>
-          </div>
-          <div class="node div3">
+            <figcaption>Mushroom Foraging &amp; Spotting</figcaption>
+          </figure>
+          <figure class="interest-tile">
             <img
               src="./img/Interest/thai-travel-np.JPG"
               alt="Travel pic while in Thailand's National Park"
+              loading="lazy"
             />
-            <div class="bottom-center-text">Travelling</div>
-          </div>
-          <div class="node div4">
+            <figcaption>Travelling</figcaption>
+          </figure>
+          <figure class="interest-tile tile-tall">
             <img
               src="./img/Interest/bubur-ayam.JPG"
               alt="a photo of an Indonesian street food, Bubur Ayam"
+              loading="lazy"
             />
-            <div class="bottom-center-text">Cooking and Eating</div>
-          </div>
-          <div class="node div5">
-            <img src="./img/Interest/tippy-loved.JPG" alt="Rika's Cat, Tippy" />
-            <div class="bottom-center-text">Loved ones</div>
-          </div>
-          <div class="node div6">
+            <figcaption>Cooking &amp; Eating</figcaption>
+          </figure>
+          <figure class="interest-tile">
+            <img
+              src="./img/Interest/tippy-loved.JPG"
+              alt="Rika's Cat, Tippy"
+              loading="lazy"
+            />
+            <figcaption>Loved Ones</figcaption>
+          </figure>
+          <figure class="interest-tile tile-tall">
             <img
               src="./img/Interest/rika-scuba-diving.jpg"
               alt="Rika scuba diving near Bare Island, NSW"
+              loading="lazy"
             />
-            <div class="bottom-center-text">Scuba Diving</div>
-          </div>
-          <div class="node div7">
+            <figcaption>Scuba Diving</figcaption>
+          </figure>
+          <figure class="interest-tile">
             <img
               src="./img/Interest/rika-bird-spotting.JPG"
               alt="Satin Bowerbird spotted by Rika"
+              loading="lazy"
             />
-            <div class="bottom-center-text">Bird Watching</div>
-          </div>
-
-          <div class="node div8">
+            <figcaption>Bird Watching</figcaption>
+          </figure>
+          <figure class="interest-tile">
             <img
               src="./img/Interest/rika-gardening.JPG"
               alt="Eggplants in Rika's garden"
+              loading="lazy"
             />
-            <div class="bottom-center-text">Gardening</div>
-          </div>
+            <figcaption>Gardening</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -628,50 +659,79 @@
         }
       });
 
-      // start of interest section
+      // rotating "I am ___" words on the landing page
       document.addEventListener("DOMContentLoaded", () => {
-        const section = document.querySelector("#interests");
-        const nodes = section.querySelectorAll(".node");
+        const words = [
+          "a product designer",
+          "a curious learner",
+          "a problem solver",
+          "a systems thinker",
+          "a climber",
+          "a tinkerer",
+          "a fungi forager",
+          "a bird watcher",
+          "a home cook enthusiast",
+          "a gardener",
+          "a noticer of small things",
+        ];
 
-        let isActive = false;
+        const wordEl = document.getElementById("i-am-word");
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        // respect reduced motion: keep the first word static
+        if (reduceMotion || !wordEl) return;
+
+        let index = 0;
+        setInterval(() => {
+          wordEl.classList.add("i-am-word--out");
+
+          setTimeout(() => {
+            index = (index + 1) % words.length;
+            wordEl.textContent = words[index];
+            wordEl.classList.remove("i-am-word--out");
+            wordEl.classList.add("i-am-word--in");
+
+            setTimeout(() => wordEl.classList.remove("i-am-word--in"), 400);
+          }, 350);
+        }, 2600);
+      });
+
+      // interest tiles: staggered reveal when scrolled into view
+      document.addEventListener("DOMContentLoaded", () => {
+        const tiles = document.querySelectorAll(".interest-tile");
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (reduceMotion) {
+          tiles.forEach((tile) => tile.classList.add("is-visible"));
+          return;
+        }
 
         const observer = new IntersectionObserver(
-          (entries) => {
-            const entry = entries[0];
-
-            if (entry.isIntersecting) {
-              isActive = true;
-            } else {
-              isActive = false;
-
-              nodes.forEach((node) => {
-                node.style.opacity = 0;
-                node.style.transform = "scale(0.1)";
-              });
-            }
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              }
+            });
           },
-          { threshold: 0.01 },
+          { threshold: 0.15 },
         );
 
-        observer.observe(section);
-
-        // scroll animation for my interest section
-        window.addEventListener("scroll", () => {
-          if (!isActive) return;
-
-          const scrollY = window.scrollY;
-
-          nodes.forEach((node, i) => {
-            const delay = i * 20;
-            const triggerPoint = section.offsetTop + delay;
-            let progress = (scrollY - triggerPoint) * 0.01;
-            progress = Math.max(0, Math.min(progress, 1.5));
-
-            node.style.opacity = progress;
-            node.style.transform = `scale(${0.2 + progress * 0.5})`;
-          });
+        tiles.forEach((tile, i) => {
+          tile.style.transitionDelay = `${(i % 4) * 90}ms`;
+          observer.observe(tile);
         });
       });
     </script>
+    <script
+      data-goatcounter="https://xrika.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </body>
 </html>
